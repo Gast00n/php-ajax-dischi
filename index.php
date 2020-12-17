@@ -13,13 +13,9 @@
 <body>
     
     <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="./img/logo.png" alt="">
-            </div>
-        </div>
-    </header>
+    <?php 
+    include __DIR__ . '/partials/header.php';
+    ?>
 
     <!-- Main Section -->
     <?php 

@@ -10,3 +10,57 @@ body {
   color: #fff;
 }
 
+.container {
+  width: 978px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header {
+  background: #132431;
+}
+
+header .logo {
+  padding: 10px;
+}
+
+header .logo img {
+  width: 50px;
+}
+
+.main {
+  padding: 100px;
+}
+
+.box-dischi {
+  width: calc((100% / 3) - 20px);
+  margin: 10px;
+  background: #000;
+  text-align: center;
+  padding: 30px 50px;
+}
+
+.box-dischi img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.box-dischi small {
+  display: block;
+  font-size: 11px;
+  margin: 10px 0;
+}
+
+.box-dischi .year {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.box-dischi .genre {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
