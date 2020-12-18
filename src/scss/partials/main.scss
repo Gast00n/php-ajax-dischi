@@ -2,6 +2,20 @@
     padding: 100px;
 }
 
+.search-bar {
+    width: 200px;
+    margin: 20px auto;
+
+    select {
+        display: inline-block;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        height: 35px;
+        line-height: 35px;
+    }
+}
+
 .box-dischi {
     width: calc((100% / 3) - 20px);
     margin: 10px;

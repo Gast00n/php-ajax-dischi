@@ -14420,6 +14420,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 
 
+var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+  el: '#app',
+  data: {
+    cdList: [],
+    querySearch: '',
+    filter: '',
+    genres: []
+  },
+  created: function created() {
+    var _this = this;
+
+    var dataUrl = window.location.href + 'scripts/json-script.php'; //Chiamata Axios
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (response) {
+      _this.cdList = response.data;
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  }
+});
 
 /***/ }),
 
