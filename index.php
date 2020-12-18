@@ -1,6 +1,6 @@
 <!-- Include Database -->
 <?php 
-    include __DIR__ . '/partials/database.php';
+    require_once __DIR__ . '/partials/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
