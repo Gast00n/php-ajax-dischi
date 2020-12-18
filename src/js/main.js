@@ -26,7 +26,7 @@ const app = new Vue({
             axios.get(data)
             .then(response => {
                 for (let i = 0; i < response.data.length; i++){
-                    let authorNow = response.data[i].author;
+                    let authorNow = response.data[i].author.trim();
                     if (! this.authors.includes(authorNow)) {
                         this.authors.push(authorNow);
                     }
@@ -35,6 +35,19 @@ const app = new Vue({
             .catch(error =>{
                 console.log(error);
             })
+        },
+        onAuthors(event) {
+            this.querySearch = '?artista=' + event.target.value;
+
+            //Chiamata Axios Filtrata
+            axios.get(window.location.href + 'scripts/json-script-filter.php' + this.querySearch)
+            .then(response => {
+                this.cdList = '';
+                this.cdList = response.data;
+            })
+            .catch(error => {console.log(error);
+            });           
+
         }
     }
 

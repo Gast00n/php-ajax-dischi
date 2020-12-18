@@ -1,7 +1,7 @@
 <div class="main">
     <div id="app">
         <div class="search-bar">
-            <select v-model="filter">
+            <select v-model="filter" @change="onAuthors($event)">
                 <option value="all" selected="selected" >All</option>
                 <option v-for="artist in authors">{{ artist }}</option>
             </select>

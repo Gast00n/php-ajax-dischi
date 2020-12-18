@@ -14447,7 +14447,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(data).then(function (response) {
         for (var i = 0; i < response.data.length; i++) {
-          var authorNow = response.data[i].author;
+          var authorNow = response.data[i].author.trim();
 
           if (!_this2.authors.includes(authorNow)) {
             _this2.authors.push(authorNow);
@@ -14455,6 +14455,18 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         }
 
         ;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    onAuthors: function onAuthors(event) {
+      var _this3 = this;
+
+      this.querySearch = '?artista=' + event.target.value; //Chiamata Axios Filtrata
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(window.location.href + 'scripts/json-script-filter.php' + this.querySearch).then(function (response) {
+        _this3.cdList = '';
+        _this3.cdList = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
