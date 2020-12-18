@@ -44,6 +44,8 @@ const app = new Vue({
             .then(response => {
                 this.cdList = '';
                 this.cdList = response.data;
+                console.log(response.data);
+                console.log(this.cdList);
             })
             .catch(error => {console.log(error);
             });           

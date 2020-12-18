@@ -10,9 +10,8 @@ foreach ($database as $data) {
         array_push($dbFiltered, $data);   
     }    
 }
-var_dump($dbFiltered);
 
-// header('Content-Type: application/json');
-// echo json_encode($dbFiltered);
+header('Content-Type: application/json');
+echo json_encode($dbFiltered);
 
 ?>
