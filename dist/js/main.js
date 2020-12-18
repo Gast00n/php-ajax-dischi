@@ -14464,7 +14464,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       this.querySearch = '?artista=' + event.target.value; //Chiamata Axios Filtrata
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(window.location.href + 'scripts/json-script-filter.php' + this.querySearch).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(window.location.href + 'scripts/json-script.php' + this.querySearch).then(function (response) {
         _this3.cdList = '';
         _this3.cdList = response.data;
         console.log(response.data);

@@ -40,7 +40,7 @@ const app = new Vue({
             this.querySearch = '?artista=' + event.target.value;
 
             //Chiamata Axios Filtrata
-            axios.get(window.location.href + 'scripts/json-script-filter.php' + this.querySearch)
+            axios.get(window.location.href + 'scripts/json-script.php' + this.querySearch)
             .then(response => {
                 this.cdList = '';
                 this.cdList = response.data;
