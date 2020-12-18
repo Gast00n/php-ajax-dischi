@@ -14425,19 +14425,40 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   data: {
     cdList: [],
     querySearch: '',
-    filter: '',
-    genres: []
+    filter: 'all',
+    authors: [],
+    filteredObj: []
   },
   created: function created() {
     var _this = this;
 
-    var dataUrl = window.location.href + 'scripts/json-script.php'; //Chiamata Axios
+    var dataUrl = window.location.href + 'scripts/json-script.php';
+    this.getAuthors(dataUrl); //Chiamata Axios
 
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dataUrl).then(function (response) {
       _this.cdList = response.data;
     })["catch"](function (error) {
       console.log(error);
     });
+  },
+  methods: {
+    getAuthors: function getAuthors(data) {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(data).then(function (response) {
+        for (var i = 0; i < response.data.length; i++) {
+          var authorNow = response.data[i].author;
+
+          if (!_this2.authors.includes(authorNow)) {
+            _this2.authors.push(authorNow);
+          }
+        }
+
+        ;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 

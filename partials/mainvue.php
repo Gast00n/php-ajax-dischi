@@ -1,10 +1,10 @@
 <div class="main">
     <div id="app">
         <div class="search-bar">
-            <!-- <select v-model="filter">
+            <select v-model="filter">
                 <option value="all" selected="selected" >All</option>
-                <option v-for="genre in genres">{{ genre }}</option>
-            </select> -->
+                <option v-for="artist in authors">{{ artist }}</option>
+            </select>
         </div>
         <div class="container">
             <div v-for="cd in cdList" class="box-dischi">
